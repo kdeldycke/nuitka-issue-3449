@@ -34,6 +34,10 @@ jobs:
           --onefile --assume-yes-for-downloads --output-filename=my-cli-${{ matrix.os }}.bin
           my_cli/__main__.py
 
+      - name: Binary metadata
+        run: |
+          "exiftool(-k).exe" my-cli-${{ matrix.os }}.bin
+
       - name: Run binary
         run: |
-          ./my-cli-${{ matrix.os }}.bin
+          my-cli-${{ matrix.os }}.bin
