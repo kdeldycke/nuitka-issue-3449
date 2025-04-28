@@ -44,4 +44,4 @@ jobs:
 
       - name: Binary metadata
         run: |
-          "exiftool(-k).exe" './my-cli-${{ matrix.os }}.bin'
+          exiftool.exe ./my-cli-${{ matrix.os }}.bin
