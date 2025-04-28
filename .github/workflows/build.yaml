@@ -34,9 +34,13 @@ jobs:
           --onefile --assume-yes-for-downloads --output-filename=my-cli-${{ matrix.os }}.bin
           my_cli/__main__.py
 
+      - name: Install exiftool
+        run: |
+          choco install exiftool --no-progress --yes
+
       - name: Binary metadata
         run: |
-          "exiftool(-k).exe" my-cli-${{ matrix.os }}.bin
+          "exiftool(-k).exe" "my-cli-${{ matrix.os }}.bin"
 
       - name: Run binary
         run: |
