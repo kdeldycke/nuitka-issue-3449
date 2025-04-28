@@ -43,5 +43,5 @@ jobs:
           choco install exiftool --no-progress --yes
 
       - name: Binary metadata
-      run: |
-        "exiftool(-k).exe" './my-cli-${{ matrix.os }}.bin'
+        run: |
+          "exiftool(-k).exe" './my-cli-${{ matrix.os }}.bin'
