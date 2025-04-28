@@ -1,6 +1,7 @@
 [project]
 name = "my-cli"
 version = "0"
+requires-python = ">= 3.9"
 
 [project.scripts]
 my-cli = "my_cli.__main__:main"
