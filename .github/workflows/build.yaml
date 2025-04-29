@@ -31,12 +31,12 @@ jobs:
       - name: Build binary
         run: >
           uv --no-progress run --frozen -- nuitka --verbose
-          --onefile --assume-yes-for-downloads --output-filename=my-cli-${{ matrix.os }}.bin
+          --onefile --assume-yes-for-downloads --output-filename=my-cli-${{ matrix.os }}
           my_cli/__main__.py
 
       - name: Run binary
         run: |
-          ./my-cli-${{ matrix.os }}.bin
+          ./my-cli-${{ matrix.os }}.exe
 
       - name: Install exiftool
         run: |
@@ -44,4 +44,4 @@ jobs:
 
       - name: Binary metadata
         run: |
-          exiftool.exe my-cli-${{ matrix.os }}.bin
+          exiftool.exe my-cli-${{ matrix.os }}.exe
